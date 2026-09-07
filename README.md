@@ -8,18 +8,19 @@ The project was developed for educational purposes only and therefore has no cla
 
 ## Prerequisites
 
-In order to seamlessly interact with the repository and the software it contains you need to following tools preinstalled:
+In order to seamlessly interact with the repository and the software it contains you need the following tools preinstalled:
 
-- Python Interpreter
+- Python Interpreter (version 3.12, see `.python-version`)
 - OCI-Compliant Container Engine (e.g. podman, docker, etc.)
 - Editor/IDE of your choice (VSC, PyCharm, etc.)
+- (optional) [uv](https://docs.astral.sh/uv/) if you prefer it over `venv` and `pip` for managing the environment and dependencies
 
 ## Quickstart
 
 In order to quickly get started with the project follow these steps:
 
 1. clone the repository
-1. nagivate to the repository
+1. navigate to the repository
 1. (optional) create a virtual environment with `python -m venv my-venv`
     1. activate the virtual environment:
         - on Windows run: `my-venv/Scripts/activate`
@@ -34,6 +35,17 @@ In order to quickly get started with the project follow these steps:
 1. start the application with `python manage.py runserver`
 1. verify the application is running by visiting `localhost:8000`
 1. (optional) create a superuser by running: `python manage.py createsuperuser`
+
+### Alternative: using uv
+
+If you prefer [uv](https://docs.astral.sh/uv/) over `venv` and `pip`, replace the environment and dependency steps above with the following commands. `uv` reads the required Python version from `.python-version` and creates the virtual environment automatically.
+
+```bash
+uv venv
+uv pip install -r requirements.txt
+```
+
+You can then run the remaining `python manage.py ...` commands through `uv run` (for example `uv run python manage.py migrate`) to execute them without activating the environment manually.
 
 ## Project Structure
 
