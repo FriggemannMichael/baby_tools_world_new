@@ -1,6 +1,30 @@
+# Virtual environments
 *venv
+
+# Version control / CI / IDE
+.git
+.gitattributes
+.gitlab
+.gitlab-ci.yml
+.github
+.idea
+
+# Documentation and licensing (not needed at runtime)
 README.md
 LICENSE
+docs
+
+# Environment files (pass configuration via --env-file at runtime instead)
 *.env
-*.gitlab
-*.github
+
+# Python caches and build artifacts
+__pycache__
+*.py[cod]
+.coverage
+htmlcov
+
+# Local database and collected/seeded assets (recreated inside the container)
+*.sqlite3
+**/*.sqlite3
+src/media
+src/staticfiles

@@ -2,6 +2,25 @@
 {% load static form_extras %}
 {% block content %}
 
+<style>
+  .product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+  }
+  .product-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: .2rem .6rem;
+    font-size: .8rem;
+    line-height: 1.4;
+    color: #0d6efd;
+    background: #e7f1ff;
+    border: 1px solid #0d6efd;
+    border-radius: 999px;
+  }
+</style>
+
 <div class="px-4">
   <!-- Product main card -->
   <div class="col-md-12 mt-4">
@@ -38,6 +57,18 @@
             <div class="mb-3 text-muted">No ratings yet</div>
           {% endif %}
         {% endwith %}
+
+        <!-- (3) Product tags -->
+        <div class="mb-3">
+          <strong class="d-block mb-1">Product-Tags</strong>
+          <div class="product-tags">
+            {% for tag in product.tags.all %}
+              <span class="product-tag">{{ tag.name }}</span>
+            {% empty %}
+              <span class="text-muted fst-italic">no tags available</span>
+            {% endfor %}
+          </div>
+        </div>
 
         <div class="btn btn-primary btn-center mt-auto">Buy now</div>
       </div>
