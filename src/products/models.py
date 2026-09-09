@@ -81,7 +81,7 @@ class Tag(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        """Return the tag name as the human-readable representation."""
+        """Return the tag name."""
         return self.name
 
     class Meta:
