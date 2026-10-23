@@ -5,7 +5,7 @@ gunicorn==25.0.1
 # you want to use waitress over gunicorn
 # waitress==3.0.2
 packaging==26.0
-pillow==12.1.0
+pillow==13.0.0
 setuptools==80.10.2
 sqlparse==0.5.5
 python-dotenv==1.2.1
